@@ -1,12 +1,13 @@
 import React from "react"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 const EmpListing = () =>{
+    const [empdata, empdatachange] = useState(null)
     useEffect (() => {
         fetch("http://localhost:8000/employee").then((res,req) => {
             return res.json()
         }).then((resp) => {
-            console.log(resp)
+            empdatachange(resp)
         }).catch((err) => {
             console.log(err.message)
         })
@@ -29,7 +30,19 @@ const EmpListing = () =>{
                             </tr>
                         </thead>
                         <tbody>
-
+                            { empdata &&
+                              empdata.map(item => (
+                                <tr key={item.id}>
+                                    <td>{item.id}</td>
+                                    <td>{item.name}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.phone}</td>
+                                    <td><a className="btn btn-success">Edit</a>
+                                    <a className="btn btn-danger">Remove</a>
+                                    <a className="btn btn-primary">Details</a></td>
+                                </tr>
+                              )) 
+                            }
                         </tbody>
                     </table>    
                 </div>
