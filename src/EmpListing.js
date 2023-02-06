@@ -1,5 +1,16 @@
 import React from "react"
+import { useEffect } from "react"
+
 const EmpListing = () =>{
+    useEffect (() => {
+        fetch("http://localhost:8000/employee").then((res,req) => {
+            return res.json()
+        }).then((resp) => {
+            console.log(resp)
+        }).catch((err) => {
+            console.log(err.message)
+        })
+    },[])
     return (
         <div className="container">
             <div className="card">
