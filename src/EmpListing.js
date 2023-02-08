@@ -1,8 +1,10 @@
 import React from "react"
 import { useState, useEffect } from "react"
+import { Link, useNavigate } from 'react-router-dom'
 
 const EmpListing = () =>{
     const [empdata, empdatachange] = useState(null)
+    const navigate = useNavigate()
     useEffect (() => {
         fetch("http://localhost:8000/employee").then((res,req) => {
             return res.json()
@@ -19,6 +21,9 @@ const EmpListing = () =>{
                     <h2>Employee Listing</h2>
                 </div>
                 <div className="card-body">
+                    <div className="divbtn">
+                        <Link to="employee/create" className="btn btn-success">Add New (+)</Link>
+                    </div>
                     <table className="table table-border">
                         <thead className="bg-dark text-white">
                             <tr>
