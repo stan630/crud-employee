@@ -7,10 +7,26 @@ const EmpListing = () => {
   const navigate = useNavigate();
 
   const LoadDetail = (id) => {
-    navigate("/employee/detail/"+id);
+    navigate("/employee/detail/" + id);
   };
-  const LoadEdit = (id) => {};
-  const RemoveFunction = (id) => {};
+  const LoadEdit = (id) => {
+    navigate("/employee/edit/" + id);
+  };
+
+  const RemoveFunction = (id) => {
+    if (window.confirm("Are you sure you want to remove?")) {
+      fetch("http://localhost:8000/employee/" + id, {
+        method: "DELETE",
+      })
+        .then((res) => {
+          alert("Removed successfully!");
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
+    }
+  };
 
   useEffect(() => {
     fetch("http://localhost:8000/employee")
@@ -25,7 +41,7 @@ const EmpListing = () => {
       });
   }, []);
   return (
-    <div className="container">
+    <div className="container-fluid">
       <div className="card">
         <div className="card-title">
           <h2>Employee Listing</h2>

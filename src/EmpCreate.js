@@ -5,7 +5,11 @@ import { Link, useNavigate } from "react-router-dom";
 const EmpCreate = () => {
   const [id, idchange] = useState("");
   const [name, namechange] = useState("");
+  const [address, addresschange] = useState("");
   const [email, emailchange] = useState("");
+  const [city, citychange] = useState("");
+  const [state, statechange] = useState("");
+  const [zip, zipchange] = useState("");
   const [phone, phonechange] = useState("");
   const [active, activechange] = useState(true);
   const [validation, valchange] = useState(false);
@@ -41,6 +45,7 @@ const EmpCreate = () => {
               </div>
               <div className="card-body">
                 <div className="row">
+                  
                   <div className="col-lg-12">
                     <div className="form-group">
                       <label>ID</label>
@@ -63,6 +68,50 @@ const EmpCreate = () => {
                         className="form-control"
                       ></input>
                       {name.length===0 && validation && <span className="text-danger">Enter a name!</span>}
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Street Address</label>
+                      <input
+                        value={address}
+                        onChange={(e)=>addresschange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>City</label>
+                      <input
+                        value={city}
+                        onChange={(e)=>citychange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>State</label>
+                      <input
+                        value={state}
+                        onChange={(e)=>statechange(e.target.value)}
+                        className="form-control"
+                      ></input>
+                    </div>
+                  </div>
+
+                  <div className="col-lg-12">
+                    <div className="form-group">
+                      <label>Zip</label>
+                      <input
+                        value={zip}
+                        onChange={(e)=>zipchange(e.target.value)}
+                        className="form-control"
+                      ></input>
                     </div>
                   </div>
 
@@ -109,7 +158,7 @@ const EmpCreate = () => {
                       </Link>
                     </div>
                   </div>
-                </div>
+                 </div> {/*row */}
               </div>
             </div>
           </form>

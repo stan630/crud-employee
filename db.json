@@ -3,43 +3,65 @@
     {
       "id": 1,
       "name": "Smedley",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
       "email": "smedley@gmail.com",
       "phone": "4109621962"
     },
     {
-      "id": 2
+      "id": 2,
+      "name": "Amri Joyner",
+      "address": "1613 Sanford Rd.",
+      "city": "Silver Spring",
+      "state": "Maryland (MD)",
+      "zip": "20905",
+      "email": "aj@icloud.com",
+      "phone": "2021450214"
     },
     {
-      "id": 3
+      "id": 3,
+      "name": "Stanley LaFond",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "email": "glad@gmail.com",
+      "phone": "6175922094"
     },
     {
+      "name": "Smedley Doolittle",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "email": "smed@gmail.com",
+      "phone": "4102650263",
+      "active": true,
       "id": 4
     },
     {
+      "name": "Achilles Hughes",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "email": "achilles@gmail.com",
+      "phone": "4102653021",
+      "active": true,
       "id": 5
     },
     {
+      "name": "Henry Jackson",
+      "address": "",
+      "city": "",
+      "state": "",
+      "zip": "",
+      "email": "jack@gmail.com",
+      "phone": "14437945943",
+      "active": true,
       "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
-    },
-    {
-      "name": "Amri",
-      "email": "aj@icloud.com",
-      "phone": "2021450214",
-      "active": true,
-      "id": 9
-    },
-    {
-      "name": "Malcolm",
-      "email": "glad@gmail.com",
-      "phone": "",
-      "active": true,
-      "id": 10
     }
   ]
 }
